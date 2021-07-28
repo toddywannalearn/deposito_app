@@ -1,6 +1,7 @@
 
 
 import 'package:deposito_app/models/saldo_model.dart';
+import 'package:deposito_app/pages/deposito_page.dart';
 import 'package:deposito_app/pages/saldo_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,12 @@ class DashboardPage extends StatelessWidget{
                   builder: (context, saldo, child){
                     return ElevatedButton(
                         onPressed: (){
-                          saldo.adicionaSaldo(10.0);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context){
+                              return DepositoPage();
+                            }),
+                          );
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(14.0),
